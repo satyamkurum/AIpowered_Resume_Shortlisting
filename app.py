@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_page_config(page_title="Resume Fit Predictor", layout="centered")  # ✅ FIRST Streamlit call
+st.set_page_config(page_title="Resume Fit Predictor", layout="centered") 
 
 import pandas as pd
 import numpy as np
@@ -9,9 +9,8 @@ import xgboost as xgb
 import torch
 import joblib
 
-# -------------------------------
 # Load pre-trained components
-# -------------------------------
+
 @st.cache_resource
 def load_model_and_tokenizer():
     tokenizer = AutoTokenizer.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
@@ -30,9 +29,8 @@ tokenizer, encoder_model = load_model_and_tokenizer()
 clf = load_xgb_model()
 le = load_label_encoder()
 
-# -------------------------------
 # Helper functions
-# -------------------------------
+
 def clean_text(text):
     text = str(text).lower()
     text = re.sub(r'<.*?>', ' ', text)
@@ -57,10 +55,9 @@ def predict_fit(resume_text, jd_text):
     label = le.inverse_transform(pred)[0]
     return label
 
-# -------------------------------
 # Streamlit UI
-# -------------------------------
-st.title("🔍 Resume Fit Predictor")
+
+st.title("Resume Fit Predictor")
 st.write("Enter a resume and a job description to predict the candidate's fit level.")
 
 resume_input = st.text_area("📄 Resume Text", height=200)
@@ -72,4 +69,4 @@ if st.button("Predict Fit"):
     else:
         with st.spinner("Analyzing..."):
             prediction = predict_fit(resume_input, jd_input)
-        st.success(f"🎯 **Predicted Fit:** {prediction}")
+        st.success(f"**Predicted Fit:** {prediction}")
