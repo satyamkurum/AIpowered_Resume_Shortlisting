@@ -73,6 +73,13 @@ git https://github.com/satyamkurum/AIpowered_Resume_Shortlisting.git
 
 ### Install Dependencies
 pip install -r requirements.txt
+```
+## About Me
+  Satyam Kurum
+- Data Scientist | ML Developer | 2025 NITK Surathkal Graduate
+- Passionate about GenAI, NLP, and creative machine learning apps
+
+- You are free to use, modify, and distribute it with attribution.
 
 ### Run the App
 python app.py
