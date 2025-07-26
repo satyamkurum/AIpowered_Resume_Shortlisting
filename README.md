@@ -51,19 +51,6 @@ Coming Soon...
      - `app.py` loads the model and exposes a simple interface or API for real-time predictions.
 
 ---
-
-## Model Performance
-
-**Classification Report (Sample)**
-
-| Class         | Precision | Recall | F1-Score | Support |
-|---------------|-----------|--------|----------|---------|
-| Good Fit      | 0.65      | 0.76   | 0.70     | 303     |
-| No Fit        | 0.73      | 0.77   | 0.75     | 658     |
-| Potential Fit | 0.68      | 0.49   | 0.57     | 288     |
-| **Accuracy**  |           |        | **0.70** | 1249    |
-
-
 ## Setup & Installation
 
 ### Clone the Repository
